@@ -60,7 +60,7 @@ int main(void)
 
 		while(1)
 		{
-			if(key_down(SET_TIME)){ b++;}
+			if(key_down(SET_TIME)) b++;
 			if (b>1)b=0;
 
 			switch (b)
@@ -91,8 +91,8 @@ int main(void)
 }
 void set_time_function (void)
 {
-	if(key_down(SET_TIME)){ b++;}
-	if(key_down(SET_MM_HH)){s++;}
+	if(key_down(SET_TIME)) b++;
+	if(key_down(SET_MM_HH))s++;
 	if(s>2)s=0;
 	blink_digits();
 
@@ -217,14 +217,14 @@ void blink_digits (void)
 	while(!(interval(blink_ms)))
 		{
 		cy1=10;cy2=10;cy3=10;cy4=10;
-		if (key_down(SET_MM_HH)){s++;};
-		if(key_down(SET_TIME)){ b++;};
+		if (key_down(SET_MM_HH))s++;
+		if(key_down(SET_TIME))  b++;
 		}
 	while(!(interval(blink_ms)))
 		{
 		cy1=gd;cy2=gj;cy3=md;cy4=mj;
-		if (key_down(SET_MM_HH)){s++;};
-		if(key_down(SET_TIME)){ b++;};
+		if (key_down(SET_MM_HH))s++;
+		if(key_down(SET_TIME))  b++;
 		}
 	
 }
@@ -233,12 +233,12 @@ void blink_hh_digits (void)
 	while(!(interval(blink_ms)))
 		{
 		cy1=10;cy2=10;cy3=md;cy4=mj;
-		if (key_down(SET_MM_HH)){s++;};
+		if (key_down(SET_MM_HH)) s++;
 		}
 	while(!(interval(blink_ms)))
 		{
 		cy1=gd;cy2=gj;cy3=md;cy4=mj;
-		if (key_down(SET_MM_HH)){s++;};
+		if (key_down(SET_MM_HH)) s++;
 		}
 }
 void blink_mm_digits (void)
@@ -246,12 +246,12 @@ void blink_mm_digits (void)
 	while(!(interval(blink_ms)))
 		{
 		cy1=gd;cy2=gj;cy3=10;cy4=10;
-		if (key_down(SET_MM_HH)){s++;};
+		if (key_down(SET_MM_HH)) s++;
 		}
 	while(!(interval(blink_ms)))
 	{
 		cy1=gd;cy2=gj;cy3=md;cy4=mj;
-		if (key_down(SET_MM_HH)){s++;};
+		if (key_down(SET_MM_HH)) s++;
 	}
 }
 bool interval(uint16_t millis)
